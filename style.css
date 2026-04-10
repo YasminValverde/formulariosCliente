@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;800&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  min-height: 100vh;
+  background: #1a0533;
+  background-image:
+    linear-gradient(rgba(255,0,255,0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,0,255,0.07) 1px, transparent 1px);
+  background-size: 40px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 50px 20px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.card {
+  background: rgba(26,5,51,0.85);
+  border-radius: 20px;
+  padding: 50px 60px;
+  width: 100%;
+  max-width: 900px;
+  border: 1px solid rgba(255,100,255,0.3);
+  box-shadow:
+    0 0 0 1px rgba(255,100,255,0.1),
+    0 0 60px rgba(180,0,255,0.2),
+    0 30px 60px rgba(0,0,0,0.5);
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 40px;
+  background: linear-gradient(90deg, #ff6ef7, #a78bfa, #38bdf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.01em;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.field label, fieldset legend {
+  color: #c084fc;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="password"],
+select,
+textarea {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,100,255,0.3);
+  border-radius: 10px;
+  color: #f0e6ff;
+  padding: 13px 16px;
+  font-size: 1rem;
+  font-family: 'Raleway', sans-serif;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  width: 100%;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #e879f9;
+  box-shadow: 0 0 0 3px rgba(232,121,249,0.2), 0 0 20px rgba(232,121,249,0.1);
+}
+
+input:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+select option { background: #1a0533; color: #f0e6ff; }
+
+textarea { resize: vertical; min-height: 100px; }
+
+fieldset {
+  border: 1px solid rgba(255,100,255,0.3);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 20px;
+}
+
+fieldset legend { padding: 0 10px; }
+
+.radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,100,255,0.25);
+  border-radius: 20px;
+  padding: 8px 18px;
+  color: #d8b4fe;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: none;
+  letter-spacing: 0;
+  transition: all 0.2s;
+}
+
+.radio-group label:hover {
+  border-color: #e879f9;
+  background: rgba(232,121,249,0.1);
+  color: #f0abfc;
+}
+
+.radio-group label:has(input:checked) {
+  background: linear-gradient(135deg, rgba(232,121,249,0.25), rgba(167,139,250,0.25));
+  border-color: #e879f9;
+  color: #fff;
+  box-shadow: 0 0 12px rgba(232,121,249,0.3);
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #d8b4fe;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 28px;
+}
+
+input[type="checkbox"], input[type="radio"] {
+  accent-color: #e879f9;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.btn-row { display: flex; gap: 14px; }
+
+input[type="button"], input[type="reset"] {
+  flex: 1;
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  transition: transform 0.15s, box-shadow 0.2s;
+}
+
+input[type="button"] {
+  background: linear-gradient(135deg, #e879f9, #a78bfa);
+  color: #fff;
+  border: none;
+  box-shadow: 0 4px 20px rgba(232,121,249,0.4);
+}
+
+input[type="button"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(232,121,249,0.6);
+}
+
+input[type="reset"] {
+  background: transparent;
+  color: #c084fc;
+  border: 1px solid rgba(255,100,255,0.35);
+}
+
+input[type="reset"]:hover {
+  background: rgba(255,100,255,0.08);
+  transform: translateY(-2px);
+}
+
+::-webkit-calendar-picker-indicator { filter: invert(1) sepia(1) saturate(3) hue-rotate(270deg); }
+
+.input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-wrap input,
+.input-wrap textarea {
+  flex: 1;
+}
+
+.input-wrap .ok {
+  width: 22px;
+  height: 22px;
+  margin-left: 10px;
+  flex-shrink: 0;
+}
+
+cite {
+  display: block;
+  color: #f87171;
+  font-size: 0.8rem;
+  font-style: normal;
+  margin-top: 5px;
+}

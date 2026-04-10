@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Inscripció CF Informàtica Marianao</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="form.js"></script>
+  </head>
+  <body>
+    <div class="card">
+      <h1>Inscripció CF Informàtica Marianao</h1>
+      <form name="formulario" method="post" action="registre.php" onsubmit="return validacion()" >
+        <div class="field">
+          <label>Nom *</label>
+          <div class="input-wrap">
+            <input type="text" name="nom" id="nom" required oninput="mostrarOk(this)" onblur="validarNom(this, errorNom)" />
+            <img class="ok" id="ok" src="ok.avif" alt="correcte" hidden />
+          </div>
+          <cite id="errorNom" hidden></cite>
+        </div>
+
+        <div class="field">
+          <label>Primer cognom *</label>
+          <div class="input-wrap">
+            <input type="text" name="cognom1" id="cognom1" required oninput="mostrarOk(this)" onblur="validarNom(this, errorCognom1)" />
+            <img class="ok" src="ok.avif" alt="correcte" hidden />
+          </div>
+          <cite id="errorCognom1" hidden></cite>
+        </div>
+
+        <div class="field">
+          <label>Segon cognom</label>
+          <div class="input-wrap">
+            <input type="text" name="cognom2" id="cognom2" oninput="mostrarOk(this)" onblur="validarNom(this, errorCognom2)" />
+            <img class="ok" src="ok.avif" alt="correcte" hidden />
+          </div>
+          <cite id="errorCognom2" hidden></cite>
+        </div>
+
+        <div class="field">
+          <label>Data de naixement *</label>
+          <div class="input-wrap">
+            <input type="date" name="data_naix" required oninput="mostrarOk(this)" />
+            <img class="ok" src="ok.avif" alt="correcte" hidden />
+          </div>
+          <cite hidden></cite>
+        </div>
+
+        <div class="field">
+          <label>Email *</label>
+          <div class="input-wrap">
+            <input type="email" name="email" required oninput="mostrarOk(this)" />
+            <img class="ok" src="ok.avif" alt="correcte" hidden />
+          </div>
+          <cite hidden></cite>
+        </div>
+
+        <div class="field">
+          <label>Telèfon</label>
+          <div class="input-wrap">
+            <input type="tel" name="telefon" oninput="mostrarOk(this)" />
+            <img class="ok" src="ok.avif" alt="correcte" hidden />
+          </div>
+          <cite hidden></cite>
+        </div>
+
+        <div class="field">
+          <label>DNI *</label>
+          <div class="input-wrap">
+            <input type="text" name="dni" required oninput="mostrarOk(this)" />
+            <img class="ok" src="ok.avif" alt="correcte" hidden />
+          </div>
+          <cite hidden></cite>
+        </div>
+
+        <div class="field">
+          <label
+            >Cicle Formatiu *
+            <select name="cicle" required>
+              <option value="">-- Selecciona --</option>
+              <option value="SMX">
+                SMX: Sistemes Microinformàtics i Xarxes
+              </option>
+              <option value="ASIX">
+                ASIX: Administració de Sistemes Informàtics en Xarxa
+              </option>
+              <option value="DAM">
+                DAM: Desenvolupament d'Aplicacions Multiplataforma
+              </option>
+              <option value="DAW">
+                DAW: Desenvolupament d'Aplicacions Web
+              </option>
+            </select>
+          </label>
+        </div>
+
+        <fieldset>
+          <legend>Últims estudis cursats *</legend>
+          <div class="radio-group">
+            <label
+              ><input type="radio" name="estudis" value="ESO" required />
+              ESO</label
+            >
+            <label
+              ><input type="radio" name="estudis" value="Batxillerat" />
+              Batxillerat</label
+            >
+            <label
+              ><input type="radio" name="estudis" value="CF Grau Mitjà" /> CF
+              Grau Mitjà</label
+            >
+            <label
+              ><input type="radio" name="estudis" value="CF Grau Superior" /> CF
+              Grau Superior</label
+            >
+            <label
+              ><input type="radio" name="estudis" value="Altres" />
+              Altres</label
+            >
+          </div>
+        </fieldset>
+
+        <div class="field">
+          <label>Usuari *</label>
+          <div class="input-wrap">
+            <input type="text" name="usuari" required oninput="mostrarOk(this)" />
+            <img class="ok" src="ok.avif" alt="correcte" hidden />
+          </div>
+          <cite hidden></cite>
+        </div>
+
+        <div class="field">
+          <label>Contrasenya *</label>
+          <div class="input-wrap">
+            <input type="password" name="password" id="password" required oninput="mostrarOk(this)" />
+            <img class="ok" src="ok.avif" alt="correcte" hidden />
+          </div>
+          <cite hidden></cite>
+        </div>
+
+        <div class="field">
+          <label>Torna a escriure la Contrasenya *</label>
+          <div class="input-wrap">
+            <input
+              type="password"
+              name="password2"
+              id="password2"
+              required
+              disabled
+              oninput="mostrarOk(this)"
+            />
+            <img class="ok" src="ok.avif" alt="correcte" hidden />
+          </div>
+          <cite hidden></cite>
+        </div>
+
+        <div class="field">
+          <label>Observacions</label>
+          <div class="input-wrap">
+            <textarea name="observacions" oninput="mostrarOk(this)"></textarea>
+            <img class="ok" src="ok.avif" alt="correcte" hidden />
+          </div>
+          <cite hidden></cite>
+        </div>
+
+        <div class="checkbox-row">
+          <input type="checkbox" name="termes" id="termes" required />
+          <label for="termes">Accepto els termes i condicions</label>
+        </div>
+
+        <div class="btn-row">
+          <input type="button" value="Submit Form" />
+          <input type="reset" value="Reset Form" />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
