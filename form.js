@@ -14,6 +14,9 @@ function validarNom() {
   }
 
 }
+function validar() {
+  
+}
 function ocultarOk() {
     const error = this.parentElement.querySelector(".error");
     error.setAttribute("hidden", "");
