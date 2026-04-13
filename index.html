@@ -9,11 +9,22 @@
   <body>
     <div class="card">
       <h1>Inscripció CF Informàtica Marianao</h1>
-      <form name="formulario" method="post" action="registre.php" onsubmit="return validacion()" >
+      <form
+        name="formulario"
+        method="post"
+        action="registre.php"
+        onsubmit="return validacion();"
+      >
         <div class="field">
           <label>Nom *</label>
           <div class="input-wrap">
-            <input type="text" class="" name="nom" id="nom" required oninput="mostrarOk(this)" onblur="validarNom(this, errorNom)" />
+            <input
+              type="text"
+              class="nombreCompleto conImg"
+              name="nom"
+              id="nom"
+              required
+            />
             <img class="ok" id="ok" src="ok.avif" alt="correcte" hidden />
           </div>
           <cite id="errorNom" hidden></cite>
@@ -22,7 +33,13 @@
         <div class="field">
           <label>Primer cognom *</label>
           <div class="input-wrap">
-            <input type="text" name="cognom1" id="cognom1" required oninput="mostrarOk(this)" onblur="validarNom(this, errorCognom1)" />
+            <input
+              type="text"
+              class="nombreCompleto"
+              name="cognom1"
+              id="cognom1"
+              required
+            />
             <img class="ok" src="ok.avif" alt="correcte" hidden />
           </div>
           <cite id="errorCognom1" hidden></cite>
@@ -31,7 +48,12 @@
         <div class="field">
           <label>Segon cognom</label>
           <div class="input-wrap">
-            <input type="text" name="cognom2" id="cognom2" oninput="mostrarOk(this)" onblur="validarNom(this, errorCognom2)" />
+            <input
+              type="text"
+              class="nombreCompleto conImg"
+              name="cognom2"
+              id="cognom2"
+            />
             <img class="ok" src="ok.avif" alt="correcte" hidden />
           </div>
           <cite id="errorCognom2" hidden></cite>
@@ -40,7 +62,7 @@
         <div class="field">
           <label>Data de naixement *</label>
           <div class="input-wrap">
-            <input type="date" name="data_naix" required oninput="mostrarOk(this)" />
+            <input type="date" name="data_naix" required class="conImg" />
             <img class="ok" src="ok.avif" alt="correcte" hidden />
           </div>
           <cite hidden></cite>
@@ -49,7 +71,13 @@
         <div class="field">
           <label>Email *</label>
           <div class="input-wrap">
-            <input type="email" name="email" required oninput="mostrarOk(this)" />
+            <input
+              type="email"
+              name="email"
+              class="ambImg"
+              required
+              oninput="mostrarOk(this)"
+            />
             <img class="ok" src="ok.avif" alt="correcte" hidden />
           </div>
           <cite hidden></cite>
@@ -58,7 +86,7 @@
         <div class="field">
           <label>Telèfon</label>
           <div class="input-wrap">
-            <input type="tel" name="telefon" oninput="mostrarOk(this)" />
+            <input type="tel" name="telefon" class="ambImg" />
             <img class="ok" src="ok.avif" alt="correcte" hidden />
           </div>
           <cite hidden></cite>
@@ -67,7 +95,7 @@
         <div class="field">
           <label>DNI *</label>
           <div class="input-wrap">
-            <input type="text" name="dni" required oninput="mostrarOk(this)" />
+            <input type="text" name="dni" required class="ambImg" />
             <img class="ok" src="ok.avif" alt="correcte" hidden />
           </div>
           <cite hidden></cite>
@@ -123,7 +151,7 @@
         <div class="field">
           <label>Usuari *</label>
           <div class="input-wrap">
-            <input type="text" name="usuari" required oninput="mostrarOk(this)" />
+            <input type="text" name="usuari" required class="ambImg" />
             <img class="ok" src="ok.avif" alt="correcte" hidden />
           </div>
           <cite hidden></cite>
@@ -132,8 +160,16 @@
         <div class="field">
           <label>Contrasenya *</label>
           <div class="input-wrap">
-            <input type="password" name="password" id="password" required oninput="mostrarOk(this)" />
+            <input
+              type="password"
+              name="password"
+              id="password"
+              required
+              oninput="mostrarOk(this)"
+            />
             <img class="ok" src="ok.avif" alt="correcte" hidden />
+            <meter max="4" id="password-strength-meter"></meter>
+            <p id="password-strength-text"></p>
           </div>
           <cite hidden></cite>
         </div>
