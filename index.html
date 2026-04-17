@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <title>Inscripció CF Informàtica Marianao</title>
     <link rel="stylesheet" href="style.css" />
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.2.0/zxcvbn.js"></script>
     <script src="form.js"></script>
   </head>
   <body>
@@ -160,18 +161,12 @@
         <div class="field">
           <label>Contrasenya *</label>
           <div class="input-wrap">
-            <input
-              type="password"
-              name="password"
-              id="password"
-              required
-              oninput="mostrarOk(this)"
-            />
+            <input type="password" name="password" id="password" required />
             <img class="ok" src="ok.avif" alt="correcte" hidden />
-            <meter max="4" id="password-strength-meter"></meter>
-            <p id="password-strength-text"></p>
           </div>
+          <meter max="4" id="password-strength-meter"></meter>
           <cite hidden></cite>
+          
         </div>
 
         <div class="field">
@@ -193,9 +188,10 @@
         <div class="field">
           <label>Observacions</label>
           <div class="input-wrap">
-            <textarea name="observacions" oninput="mostrarOk(this)"></textarea>
+            <textarea name="observacions"></textarea>
             <img class="ok" src="ok.avif" alt="correcte" hidden />
           </div>
+          <p id="comptador" hidden>0/120</p>
           <cite hidden></cite>
         </div>
 
