@@ -154,7 +154,7 @@ input[type="checkbox"], input[type="radio"] {
 
 .btn-row { display: flex; gap: 14px; }
 
-input[type="button"], input[type="reset"] {
+input[type="button"], input[type="reset"], input[type="submit"] {
   flex: 1;
   padding: 14px;
   border-radius: 12px;
@@ -166,14 +166,16 @@ input[type="button"], input[type="reset"] {
   transition: transform 0.15s, box-shadow 0.2s;
 }
 
-input[type="button"] {
+input[type="button"],
+input[type="submit"] {
   background: linear-gradient(135deg, #e879f9, #a78bfa);
   color: #fff;
   border: none;
   box-shadow: 0 4px 20px rgba(232,121,249,0.4);
 }
 
-input[type="button"]:hover {
+input[type="button"]:hover,
+input[type="submit"]:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 30px rgba(232,121,249,0.6);
 }

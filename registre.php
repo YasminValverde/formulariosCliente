@@ -12,23 +12,23 @@
         if (isset($_POST['email'])) {
             define('DB_SERVER', 'localhost');
             define('DB_USERNAME', 'cfgs');
-            define('DB_PASSWORD', 'ira491');
+            define('DB_PASSWORD', 'sol19');
             define('DB_DATABASE', 'cfgs');
             $db = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
 
             $nom = utf8_decode($_POST["nom"]);
             $cognom1 = utf8_decode($_POST["cognom1"]);
             $cognom2 = utf8_decode($_POST["cognom2"]);
-            $data = $_POST["datanaixement"];
+            $data = $_POST["data_naix"];
             $mail = $_POST["email"];
-            $tlf = $_POST["tel"];
+            $tlf = $_POST["telefon"];
             $dni = $_POST["dni"];
             $dropdown = utf8_decode($_POST["cicle"]);
-            $radio = utf8_decode($_POST["radio"]);
+            $radio = utf8_decode($_POST["estudis"]);
             $usuari = utf8_decode($_POST["usuari"]);
-            $passwd1 = $_POST["passwd1"];
+            $passwd1 = $_POST["password"];
             $encryptPassword = password_hash($passwd1, PASSWORD_DEFAULT);
-            $textarea = utf8_decode($_POST["textarea"]);
+            $textarea = utf8_decode($_POST["observacions"]);
 
             $stmt = $db->prepare("SELECT MAIL FROM register WHERE MAIL = ?");
             $stmt->bind_param("s", $mail);

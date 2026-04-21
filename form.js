@@ -16,13 +16,36 @@ window.onload = function () {
   document.formulario.password.addEventListener("input", fortalezaContraseña);
   document.formulario.password.addEventListener("blur", validarContraseña);
   document.formulario.password2.addEventListener("blur", validarContraseña2);
-  document.formulario.observacions.addEventListener("blur", validarObservacions);
-  document.formulario.observacions.addEventListener("input", comptadorCaracteres);
+  document.formulario.observacions.addEventListener("blur",validarObservacions);
+  document.formulario.observacions.addEventListener("blur", ocultarComptador);
+  document.formulario.observacions.addEventListener("input",comptadorCaracteres);
+  document.formulario.addEventListener("submit", enviar);
+  document.formulario.addEventListener("reset", reset);
 
-  
   var meter = document.getElementById("password-strength-meter");
 
   // ------------------------------METODOS-----------------------------------
+
+  function enviar(e) {
+    e.preventDefault();
+    if (this.checkValidity()) {
+       this.submit();
+    };
+  }
+  function reset() {
+    var camps = document.querySelectorAll("input, textarea");
+    for (var i = 0; i < camps.length; i++) {
+      camps[i].setCustomValidity("");
+    }
+    var imgs = document.querySelectorAll(".ok");
+    for (var i = 0; i < imgs.length; i++) {
+      imgs[i].style.display = "none";
+    }
+    meter.value = 0;
+    document.formulario.password2.disabled = true;
+    document.getElementById("comptador").style.display = "none";
+  }
+
   function validarNom() {
     tractaCorrecte(this);
 
@@ -130,7 +153,7 @@ window.onload = function () {
 
   function validarContraseña() {
     tractaCorrecte(this);
-    ocultarOk(this)
+    ocultarOk(this);
     if (meter.value < 2) {
       tractaError(this, "Contrasenya incorrecta");
       return;
@@ -146,58 +169,39 @@ window.onload = function () {
 
   function habilitarPassword2(score) {
     document.formulario.password2.disabled = score < 2;
-    score=0;
-
+    score = 0;
   }
   function validarContraseña2() {
     tractaCorrecte(this);
-    ocultarOk(this)
+    ocultarOk(this);
     if (document.formulario.password.value !== this.value) {
       tractaError(this, "Les contrasenyes no coincideixen");
       return;
     }
     mostrarOk(this);
-    
   }
 
- function validarObservacions() {
+  function validarObservacions() {
     tractaCorrecte(this);
-    if (this.value.length >120) {
+    if (this.value.length > 120) {
       tractaError(this, "longitud màxima 120 caràcters");
+      ocultarOk(this);
       return;
     }
+    if (this.value.length > 0) mostrarOk(this);
   }
 
   function comptadorCaracteres() {
     const caracters = document.formulario.observacions.value.length;
     const comptador = document.getElementById("comptador");
+    comptador.style.display = "block";
     comptador.innerHTML = caracters + "/120";
-    if (comptador>120) {
-      comptador.style.color ="red";
-    } else {
-      comptador.style.color ="white";
-    }
+    comptador.style.color = caracters > 120 ? "red" : "white";
   }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
+  function ocultarComptador() {
+    document.getElementById("comptador").style.display = "none";
+  }
 
   function tractaCorrecte(objecte) {
     objecte.setCustomValidity("");
